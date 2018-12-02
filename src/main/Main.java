@@ -1,5 +1,7 @@
 package main;
 
+import analizadores.AnalizadorSintactico;
+
 public class Main {
 
 	public static void main(String[] args) {

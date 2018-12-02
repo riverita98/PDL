@@ -1,4 +1,4 @@
-package main;
+package analizadores;
 
 import java.io.IOException;
 

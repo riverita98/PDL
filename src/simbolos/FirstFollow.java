@@ -148,7 +148,7 @@ public class FirstFollow {
 		add(FOLLOW_L,FOLLOW_B);
 		add(FOLLOW_L,FOLLOW_X);
 		add(FOLLOW_L,FOLLOW_Y);
-		add(FOLLOW_L,")");
+		//add(FOLLOW_L,")"); CAMBIO Vp -> (L) por Vp-> (J)
 		
 		add(FOLLOW_Xp,FOLLOW_B);
 		
