@@ -1,0 +1,37 @@
+/* variables globales */
+
+var int num;	
+var string cad;
+
+/* funcion con un solo parametro */
+
+function bool esDos (int n)	
+{
+	if (n % 1000000) {
+		cad = "Es el \n \'numero 2\' ";
+		print(cad);
+		return true;
+	}	
+	
+	cad="No es \t \'el numero 2\' ";
+	print ( cad ) ;
+	return	false; /*retorno de funcion*/
+	
+}
+
+
+/*funcion con dos argumentos*/
+print ("Adivina numero: ")
+int n;
+promt(n);
+
+function adivinaNumero(int n){
+
+	print ("El numero introducido es: ", n);
+	
+	bool resultado = esDos(n);
+
+	print ("¿Has adivinado el número?: ", resultado);
+
+}
+

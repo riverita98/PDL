@@ -1,0 +1,37 @@
+TABLA DE SIMBOLOS #1
+* LEXEMA : 'sumaNumerosRecursivo'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'limite'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'tipoDatos'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'entero'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'entero2'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'cadena'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'logico'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'operadores'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------
+* LEXEMA : 'cadenaSinFinal'
+  ATRIBUTOS :
+  + Tipo : 'null'
+  --------- ---------

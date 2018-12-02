@@ -1,0 +1,34 @@
+function int main (int param){
+
+	var int valor=0, num;
+	var string cadena;
+	
+	cadena="Introduce un valor maximo";	
+	print(cadena);
+	
+	prompt(num);
+	
+	valor=random(0,num);	
+	
+	if(valor==3){
+		
+		while(num<30){		
+			tam=tam+1;
+		
+			if(tam>20){
+				tam = 20-1;
+			}else{
+				var int numero = 8++;
+				print(numero);
+			}
+		}
+	}else{
+		do{
+			print("El valor es: ", valor++);
+		}while(valor!=10);
+	}
+}
+
+function random (int n1, int n2){
+	return systemRandom(n1, n2);
+}

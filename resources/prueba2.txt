@@ -1,0 +1,23 @@
+int n1, n2; /*Probando declaracion*/
+
+print("Dame un numero");
+prompt(n1);
+print("Dame otro numero");
+prompt(n2);
+
+function operadores(int n1,  int n2){
+	print("Operacion suma tiene resultado: ", n1+n2);
+	print("Operacion resta tiene resultado: ", n1 -   n2);
+	print("Operacion division tiene resultado: " , n1/n2);
+	bool iguales = (n1==n2); /**Probando asignacion tambien*/
+	print("Los numeros son iguales??: ", iguales);
+	bool distintos = (n1 !n2);
+	print("Los numeros son diferentes??: ", distintos);
+
+	if(distintos | iguales)
+		print("da igual lo que sea");
+	if(iguales & n1==2)
+		print("encima son igual a 2");	
+}
+
+/*Comentario sin final
