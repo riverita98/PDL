@@ -12,10 +12,12 @@ import tablas.tablasDinamicas.TablaSimbolos;
 import tablas.tablasDinamicas.TablaTokens;
 import tokens.General;
 import tokens.Identificador;
+import tokens.PalabraReservada;
 import tokens.Token;
 import tokens.codigos.CodigoToken;
 import tokens.constantes.ConstanteCadena;
 import tokens.constantes.ConstanteEntero;
+import tokens.constantes.ConstanteLogica;
 
 public class AnalizadorSintactico {
 
@@ -76,29 +78,21 @@ public class AnalizadorSintactico {
 	}
 
 	private boolean esId() {
-		if(token !=null && token instanceof Identificador) {
-			return true;
-		}
-		return false;
+		return token !=null && token instanceof Identificador;
 	}
 	private boolean esEnt() {
-		if(token !=null && token instanceof ConstanteEntero) {
-			return true;
-		}
-		return false;
+		return token !=null && token instanceof ConstanteEntero;
 	}
 	private boolean esCad() {
-		if(token !=null && token instanceof ConstanteCadena) {
-			return true;
-		}
-		return false;
+		return token !=null && token instanceof ConstanteCadena;
+	}
+	
+	private boolean esLog() {
+		return token !=null && token instanceof PalabraReservada && (token.getValorToken().equals("true") || token.getValorToken().equals("false"));
 	}
 	
 	private boolean esEOF() {
-		if(token !=null && token instanceof General && token.getValorToken().equals("")) {
-			return true;
-		}
-		return false;
+		return token !=null && token instanceof General && token.getValorToken().equals("");
 	}
 
 
@@ -278,7 +272,7 @@ public class AnalizadorSintactico {
 	}
 
 	private void A() {
-		if(FirstFollow.FIRST_E.contains(sigT) || this.esId() || this.esEnt() || this.esCad()) {
+		if(FirstFollow.FIRST_E.contains(sigT) || this.esId() || this.esEnt() || this.esCad()  || this.esLog() ) {
 			this.parse.add(26);
 			E();
 			I();
@@ -303,7 +297,7 @@ public class AnalizadorSintactico {
 	}
 
 	private void G() {
-		if(FirstFollow.FIRST_E.contains(sigT) || this.esId() || this.esEnt() || this.esCad()) {
+		if(FirstFollow.FIRST_E.contains(sigT) || this.esId() || this.esEnt() || this.esCad()  || this.esLog() ) {
 			this.parse.add(29);
 			E();
 		}else if(FirstFollow.FOLLOW_G.contains(sigT)) {
@@ -332,7 +326,7 @@ public class AnalizadorSintactico {
 	}
 
 	private void J() {
-		if((FirstFollow.FIRST_E.contains(sigT)) || this.esId() || this.esEnt() || this.esCad()) {
+		if((FirstFollow.FIRST_E.contains(sigT)) || this.esId() || this.esEnt() || this.esLog()  || this.esCad()) {
 			this.parse.add(33);
 			E();
 			I();
@@ -443,7 +437,7 @@ public class AnalizadorSintactico {
 	}
 
 	private void E() {
-		if(FirstFollow.FIRST_O.contains(sigT) || this.esEnt() || this.esId() || this.esCad()) {
+		if(FirstFollow.FIRST_O.contains(sigT) || this.esEnt() || this.esId() || this.esLog()  || this.esCad()) {
 			this.parse.add(48);
 			O();
 			Ep();
@@ -469,7 +463,7 @@ public class AnalizadorSintactico {
 	}
 
 	private void O() {
-		if(FirstFollow.FIRST_Pp.contains(sigT) || this.esEnt() || this.esId() || this.esCad()) {
+		if(FirstFollow.FIRST_Pp.contains(sigT) || this.esEnt() || this.esId() || this.esLog()  || this.esCad()) {
 			this.parse.add(51);
 			Pp();
 			Op();
@@ -496,7 +490,7 @@ public class AnalizadorSintactico {
 
 	//P'
 	private void Pp() {
-		if(FirstFollow.FIRST_Q.contains(sigT)|| this.esEnt() || this.esCad() || this.esId()) {
+		if(FirstFollow.FIRST_Q.contains(sigT)|| this.esEnt() || this.esCad() || this.esLog()  || this.esId()) {
 			this.parse.add(54);
 			Q();
 			Ppp();
@@ -531,7 +525,7 @@ public class AnalizadorSintactico {
 	}
 
 	private void Q() {
-		if(FirstFollow.FIRST_R.contains(sigT) || this.esEnt() || this.esCad() || this.esId() ) {
+		if(FirstFollow.FIRST_R.contains(sigT) || this.esEnt() || this.esCad() || this.esLog()  || this.esId() ) {
 			this.parse.add(58);
 			R();
 			Qp();
@@ -563,7 +557,7 @@ public class AnalizadorSintactico {
 	}
 
 	private void R() {
-		if(FirstFollow.FIRST_Sp.contains(sigT) || this.esEnt() || this.esCad() || this.esId() ) {
+		if(FirstFollow.FIRST_Sp.contains(sigT) || this.esEnt() || this.esCad() || this.esLog()  || this.esId() ) {
 			this.parse.add(62);
 			Sp();
 			Rp();
@@ -595,7 +589,7 @@ public class AnalizadorSintactico {
 
 	//S'
 	private void Sp() {
-		if(FirstFollow.FIRST_U.contains(sigT)|| this.esEnt() || this.esCad() || this.esId()) {
+		if(FirstFollow.FIRST_U.contains(sigT)|| this.esEnt() || this.esCad() || this.esLog() || this.esId()) {
 			this.parse.add(66);
 			U();
 			Spp();
@@ -646,7 +640,7 @@ public class AnalizadorSintactico {
 			V();
 			Up();
 		}
-		else if(FirstFollow.FIRST_V.contains(sigT)|| this.esEnt() || this.esCad() || this.esId()){
+		else if(FirstFollow.FIRST_V.contains(sigT)|| this.esEnt() || this.esCad() || this.esLog()|| this.esId()){
 			this.parse.add(73);
 			V();
 			Up();
@@ -695,6 +689,9 @@ public class AnalizadorSintactico {
 		else if(this.esCad()){
 			this.parse.add(80);
 			this.pedirToken();
+		}else if(this.esLog()) {//anadido
+			this.parse.add(81);
+			this.pedirToken();
 		}
 		else{
 			this.error();
@@ -704,44 +701,19 @@ public class AnalizadorSintactico {
 	//V'
 	private void Vp() {
 		if(sigT.equals("(")) {
-			this.parse.add(81);
+			this.parse.add(82);
 			this.equipara("(");
 			J();//L
 			this.equipara(")");
 		} 
 		else if(FirstFollow.FOLLOW_Vp.contains(sigT) || this.esId() || this.esEOF()){
-			this.parse.add(82);			
+			this.parse.add(83);			
 		}
 		else{
 			this.error();
 		}
 	}
 	
-	// --------------------------------------------------------------
-
-
-
-	// --------------------------------------------------------------
-
-
-
-	// --------------------------------------------------------------
-
-
-
-
-	// --------------------------------------------------------------
-
-
-
-	// --------------------------------------------------------------
-
-	/*
-	 * DEDE COMPARAR EL TOKEN ACTUAL CON EL PREVISTO QUE SEA SE AVANZA AL SIGUIENTE
-	 * TOKEN DEJANDO EL LEXEMA DEL TOKEN EN sigT >>>> >>> sigT =
-	 * nextToken().getLex(); //Ejemplo pseudocodigo
-	 */
-
 
 	private String error() {//UNA EXCEPCION
 		return "";

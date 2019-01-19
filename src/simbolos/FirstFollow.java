@@ -24,7 +24,7 @@ public class FirstFollow {
 	public static ArrayList<String> FIRST_Rp = new ArrayList<String>(Arrays.asList("+","-","lam"));
 	public static ArrayList<String> FIRST_Spp = new ArrayList<String>(Arrays.asList("*","/","lam"));
 	public static ArrayList<String> FIRST_Up = new ArrayList<String>(Arrays.asList("++","--","lam"));
-	public static ArrayList<String> FIRST_V = new ArrayList<String>(Arrays.asList("(","id","cte_ent","cte_cad"));
+	public static ArrayList<String> FIRST_V = new ArrayList<String>(Arrays.asList("(","id","cte_ent","cte_cad", "cte_log"));
 	public static ArrayList<String> FIRST_Vp = new ArrayList<String>(Arrays.asList("(","lam"));
 	
 	////CON DEPENDENCIAS

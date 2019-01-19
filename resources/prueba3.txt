@@ -2,6 +2,7 @@ function int main (int param){
 
 	var int valor=0, num;
 	var string cadena;
+	var bool boooooo=true;
 	
 	cadena="Introduce un valor maximo";	
 	print(cadena);
@@ -12,8 +13,10 @@ function int main (int param){
 	
 	if(valor==3){
 		
-		while(num<30){		
+		while(num<30 && num>10 || num==15){		
 			tam=tam+1;
+			tam = tam * tam;
+			tam = tam/tam;
 		
 			if(tam>20){
 				tam = 20-1;
@@ -24,6 +27,7 @@ function int main (int param){
 		}
 	}else{
 		do{
+			if(valor!=9) print("no es 9");
 			print("El valor es: ", valor++);
 		}while(valor!=10);
 	}

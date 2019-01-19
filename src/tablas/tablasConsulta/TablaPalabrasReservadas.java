@@ -18,19 +18,19 @@ public final class TablaPalabrasReservadas {
 	}
 
 	private static void anadirPalabrasReservadas() {
-		tabla.put("var", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_VAR));
-		tabla.put("int", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_INT));
-		tabla.put("bool", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_BOOL));
-		tabla.put("string", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_STRING));
-		tabla.put("print", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_PRINT));
-		tabla.put("prompt", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_PROMPT));
-		tabla.put("return", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_RETURN));
-		tabla.put("if", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_IF));
-		tabla.put("do", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_DO));
-		tabla.put("while", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_WHILE));
-		tabla.put("function", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_FUNCTION));
-		tabla.put("true", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_TRUE));
-		tabla.put("false", new Pair<Integer, String>(entrada++, CodigoPalabraReservada.MSG_FALSE));
+		tabla.put("var", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_VAR));
+		tabla.put("int", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_INT));
+		tabla.put("bool", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_BOOL));
+		tabla.put("string", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_STRING));
+		tabla.put("print", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_PRINT));
+		tabla.put("prompt", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_PROMPT));
+		tabla.put("return", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_RETURN));
+		tabla.put("if", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_IF));
+		tabla.put("do", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_DO));
+		tabla.put("while", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_WHILE));
+		tabla.put("function", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_FUNCTION));
+		tabla.put("true", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_TRUE));
+		tabla.put("false", new Pair<Integer, String>(++entrada, CodigoPalabraReservada.MSG_FALSE));
 	}
 
 	public static Pair<Integer, String> getEntrada(String palabra) {
